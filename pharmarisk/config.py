@@ -39,3 +39,14 @@ CONFIDENCE_LEVELS = [0.95, 0.99]
 # Starts early enough to replay the March 2020 COVID crash in the stress tests.
 DATA_START = "2019-06-01"
 
+
+# Monte Carlo: number of simulated days, and the random seed so the
+# "random" draws come out identical on every run (results are repeatable).
+MC_SIMULATIONS = 10_000
+RANDOM_SEED = 42
+
+
+# Student-t degrees of freedom for Monte Carlo: lower = fatter tails.
+# 5 is a common choice for daily stock returns.
+MC_T_DF = 5
+
