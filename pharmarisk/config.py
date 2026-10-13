@@ -35,3 +35,7 @@ ESTIMATION_WINDOW = 250
 # 95% is included because its ~12 expected breaches a year give the backtest
 # enough events to judge whether a model is accurate or just lucky.
 CONFIDENCE_LEVELS = [0.95, 0.99]
+
+# Starts early enough to replay the March 2020 COVID crash in the stress tests.
+DATA_START = "2019-06-01"
+
