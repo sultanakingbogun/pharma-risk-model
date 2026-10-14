@@ -50,3 +50,14 @@ RANDOM_SEED = 42
 # 5 is a common choice for daily stock returns.
 MC_T_DF = 5
 
+
+# Sector-wide shock (e.g. US drug-pricing policy or tariffs). Large pharma fell
+# about 15% over 20 days twice recently (Nov 2024, Apr 2025); -12% is a
+# slightly milder one-off hit.
+SECTOR_SHOCK = -0.12
+
+
+# Single-stock "trial failure": one biotech drops 30% overnight. Tested with
+# that stock making up 5% to 50% of the portfolio.
+TRIAL_FAILURE_SHOCK = -0.30
+CONCENTRATIONS = [0.05, 0.10, 0.20, 0.30, 0.40, 0.50]
