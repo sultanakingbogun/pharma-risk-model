@@ -61,3 +61,8 @@ SECTOR_SHOCK = -0.12
 # that stock making up 5% to 50% of the portfolio.
 TRIAL_FAILURE_SHOCK = -0.30
 CONCENTRATIONS = [0.05, 0.10, 0.20, 0.30, 0.40, 0.50]
+
+
+# March 2020 COVID crash, from the S&P 500's pre-crash high to its low.
+COVID_PEAK = "2020-02-19"
+COVID_TROUGH = "2020-03-23"

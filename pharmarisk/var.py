@@ -40,7 +40,6 @@ def monte_carlo_var(port_returns, confidence, n_sims=config.MC_SIMULATIONS):
     """VaR from simulated days instead of real ones.
     Draws n_sims days from a Student-t distribution, which is like a bell
     curve but with fatter tails. Lower df = fatter tails; 5 is a common choice.
-
     The std is matched to the real data, so only the shape differs.
     """
     rng = np.random.default_rng(config.RANDOM_SEED)
