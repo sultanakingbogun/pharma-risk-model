@@ -1,0 +1,7 @@
+Confidence,Method,VaR ($)
+95%,Historical,22287
+95%,Parametric (normal),32955
+95%,Monte Carlo (Student-t),31668
+99%,Historical,33491
+99%,Parametric (normal),47292
+99%,Monte Carlo (Student-t),52357

@@ -1,0 +1,7 @@
+Confidence,Method,Days,Expected breaches,Actual breaches,Kupiec p,Verdict,Cluster p,Last 250d breaches,Traffic light
+95%,Historical,1510,75.5,84,0.324,PASS,0.135,8,n/a
+95%,Parametric (normal),1510,75.5,77,0.86,PASS,0.054,6,n/a
+95%,Monte Carlo (Student-t),1510,75.5,83,0.383,PASS,0.12,6,n/a
+99%,Historical,1510,15.1,18,0.467,PASS,0.209,1,Green
+99%,Parametric (normal),1510,15.1,24,0.034,FAIL,0.395,0,Green
+99%,Monte Carlo (Student-t),1510,15.1,21,0.15,PASS,0.296,0,Green
