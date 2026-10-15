@@ -1,4 +1,4 @@
-"""Run the full analysis and save every results table to output/.
+"""Run the full analysis and save every results table and chart to output/.
 
     python run_analysis.py              # uses saved prices if present
     python run_analysis.py --refresh    # downloads fresh prices first
@@ -6,7 +6,7 @@
 import argparse
 from pathlib import Path
 
-from pharmarisk import analysis, data
+from pharmarisk import analysis, backtest, config, data, plots
 
 OUT = Path("output")
 
@@ -33,6 +33,16 @@ def main():
         print(f"\n{name}:")
         print(table.to_string(index=False))
     print(f"\nTables saved to {OUT}/")
+
+    recent = port.tail(config.ESTIMATION_WINDOW)
+    var99 = {name: method(recent, 0.99) for name, method in analysis.METHODS.items()}
+    plots.loss_distribution(recent, var99, OUT / "loss_distribution.png")
+
+    forecast = backtest.rolling_var(port, 0.99)
+    plots.backtest_chart(port, forecast, "Historical", OUT / "backtest_historical_99.png")
+
+    plots.concentration_chart(tables["trial_failure"], OUT / "concentration_stress.png")
+    print(f"Charts saved to {OUT}/")
 
 
 if __name__ == "__main__":
