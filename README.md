@@ -55,10 +55,10 @@ pharmarisk/
   stress.py     sector shock, trial failure and COVID replay
   analysis.py   runs everything and collects the results as tables
   plots.py      the three charts
- run_analysis.py  one command: data -> results -> tables and charts in output/
- tests/           automated checks on cases where the right answer is known
- output/          generated tables (CSV) and charts (PNG)
- summary_memo.md  findings and recommendations for a non-technical reader
+  run_analysis.py  one command: data -> results -> tables and charts in output/
+  tests/           automated checks on cases where the right answer is known
+  output/          generated tables (CSV) and charts (PNG)
+  summary_memo.md  findings and recommendations for a non-technical reader
 
 ```
 
