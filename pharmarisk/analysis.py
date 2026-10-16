@@ -11,17 +11,25 @@ METHODS = {
 
 
 def var_table(port_returns):
-    """Current 1-day VaR in dollars, for every method and confidence level."""
+    """Current 1-day VaR for every method and level, plus Expected Shortfall, in dollars."""
     recent = port_returns.tail(config.ESTIMATION_WINDOW)
     rows = []
     for level in config.CONFIDENCE_LEVELS:
         for name, method in METHODS.items():
             rows.append({
+                "Measure": "VaR",
                 "Confidence": f"{level:.0%}",
                 "Method": name,
-                "VaR ($)": round(method(recent, level) * config.PORTFOLIO_VALUE),
+                "Loss ($)": round(method(recent, level) * config.PORTFOLIO_VALUE),
             })
+    rows.append({
+        "Measure": "Expected Shortfall",
+        "Confidence": f"{config.ES_LEVEL:.1%}",
+        "Method": "Historical",
+        "Loss ($)": round(var.historical_es(recent, config.ES_LEVEL) * config.PORTFOLIO_VALUE),
+    })
     return pd.DataFrame(rows)
+
 
 
 def backtest_table(port_returns):

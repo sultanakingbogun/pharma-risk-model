@@ -36,6 +36,10 @@ ESTIMATION_WINDOW = 250
 # enough events to judge whether a model is accurate or just lucky.
 CONFIDENCE_LEVELS = [0.95, 0.99]
 
+# Expected Shortfall level used by the Basel (FRTB) capital rules.
+ES_LEVEL = 0.975
+
+
 # Starts early enough to replay the March 2020 COVID crash in the stress tests.
 DATA_START = "2019-06-01"
 

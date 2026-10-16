@@ -44,6 +44,14 @@ def test_historical_var_on_constant_losses():
     assert var.historical_var(returns, 0.95) == pytest.approx(0.01)
 
 
+
+def test_expected_shortfall_is_at_least_var():
+    """ES averages the losses beyond the VaR line, so it can never be smaller."""
+    rng = np.random.default_rng(2)
+    returns = pd.Series(rng.normal(0, 0.01, size=10_000))
+    assert var.historical_es(returns, 0.99) >= var.historical_var(returns, 0.99)
+
+
 def test_var_matches_bell_curve_theory():
     """On a huge sample of bell-curve returns, both methods should land on the
     textbook answer: 2.33 standard deviations below the average."""
