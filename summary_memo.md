@@ -1,6 +1,6 @@
 # Pharma portfolio risk: summary
 
-**To:** Head of Risk   **From:** Sultan Akingbogun   **Date:** 16 October 2026
+   **By:** Sultan Akingbogun   **Date:** 16 October 2026
 
 ## Bottom line
 
